@@ -5,7 +5,7 @@ describe "GET /api/v1/meals" do
     breakfast = Meal.create!(name: "Breakfast")
     lunch = Meal.create!(name: "Lunch")
 
-    expected = "[{\"id\":#{breakfast.id},\"name\":\"Breakfast,\"Foods\":[]},{\"id\":#{lunch.id},\"name\":\"Lunch,\"Foods\":[]}]"
+    expected = "[{\"id\":#{breakfast.id},\"name\":\"Breakfast\",\"foods\":[]},{\"id\":#{lunch.id},\"name\":\"Lunch\",\"foods\":[]}]"
 
     get "/api/v1/meals"
 
