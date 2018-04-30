@@ -62,3 +62,10 @@ RSpec.configure do |c|
   c.before(:all) {DatabaseCleaner.clean}
   c.after(:each) {DatabaseCleaner.clean}
 end
+
+Shoulda::Matchers.configure do |c|
+  c.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end 
