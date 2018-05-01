@@ -9,7 +9,9 @@ class Api::V1::FoodsController < ApplicationController
 
   def create
     food = Food.new(name: params["food"]["name"], calories: params["food"]["calories"])
-    unless food.save
+    if food.save
+      render json: food
+    else
       render status: 400, json: {message: "Name and Calories required"}
     end
   end
