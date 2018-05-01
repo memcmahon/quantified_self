@@ -4,7 +4,7 @@ Meal.destroy_all
 
 Meal.create!([{name: "Breakfast"},
               {name: "Lunch"},
-              {name: "Snack"},
+              {name: "Snacks"},
               {name: "Dinner"}])
 
 Food.create!([{name: "Banana", calories: 34},
