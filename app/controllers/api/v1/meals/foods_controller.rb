@@ -19,6 +19,6 @@ class Api::V1::Meals::FoodsController < ApplicationController
     end
 
     def not_found
-      render status: 404, json: { message: "Record Not Found" }
-    end 
+      render status: 404
+    end
 end
