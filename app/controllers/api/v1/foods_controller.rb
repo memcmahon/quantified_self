@@ -7,6 +7,13 @@ class Api::V1::FoodsController < ApplicationController
     render json: Food.find(params[:id])
   end
 
+  def create
+    food = Food.new(name: params["food"]["name"], calories: params["food"]["calories"])
+    unless food.save
+      render status: 400, json: {message: "Name and Calories required"}
+    end
+  end
+
   def destroy
     Food.destroy(params[:id])
     rescue ActiveRecord::RecordNotFound
