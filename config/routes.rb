@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get '/meals/:id/foods', to: 'meals#show'
       namespace 'meals' do
         delete '/:meal_id/foods/:id', to: 'foods#destroy'
+        post '/:meal_id/foods/:id', to: 'foods#create'
       end
     end
   end
