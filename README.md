@@ -10,6 +10,7 @@ If you would like to clone and use this repo locally, please follow the steps be
 
 `$ git clone https://github.com/memcmahon/quantified_self.git`
 `$ cd quantified_self`
+`$ bundle install`
 `$ rails db:setup`
 `$ rails s`
 
