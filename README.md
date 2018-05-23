@@ -1,24 +1,59 @@
-# README
+# Quantified-Self Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is one of three identical APIs build as part of the [Quantified Self](http://backend.turing.io/module4/projects/quantified-self/quantified-self) project while at Turing.  Built over 2 days using Ruby on Rails, this is a RESTful JSON API that is designed to be used as a daily meal tracker.
 
-Things you may want to cover:
+The [endpoints](#endpoints) below can be explored using [curl](https://curl.haxx.se/), [Postman](https://www.getpostman.com/) or your preferred client.  This API is deployed at https://infinite-retreat-10591.herokuapp.com/
 
-* Ruby version
+## Local Installation
 
-* System dependencies
+If you would like to clone and use this repo locally, please follow the steps below:
 
-* Configuration
+`$ git clone https://github.com/memcmahon/quantified_self.git`
+`$ cd quantified_self`
+`$ rails db:setup`
+`$ rails s`
 
-* Database creation
+You can now navigate to `localhost:3000` and use the [endpoints](#endpoints) described below
 
-* Database initialization
+## Schema
 
-* How to run the test suite
+![Imgur](https://i.imgur.com/T6ImmLI.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+## <a name='endpoints'>Endpoints</a>
 
-* Deployment instructions
+### Food Endpoints
 
-* ...
+```
+GET /api/v1/foods
+```
+```
+GET /api/v1/foods/:id
+```
+```
+POST /api/v1/foods
+   with body: { "food": { "name": "Name of food here", "calories": "Calories here"} }
+```
+```
+PATCH /api/v1/foods
+   with body: { "food": { "name": "Name of food here", "calories": "Calories here"} }
+```
+```
+DELETE /api/v1/foods/:id
+```
+
+### Meal Endpoints
+```
+GET /api/v1/meals
+```
+```
+GET /api/v1/meals/:meal_id/foods
+```
+```
+POST /api/v1/meals/:meal_id/foods/:food_id
+```
+```
+DELETE /api/v1/meals/:meal_id/foods/:food_id
+```
+
+## Prerequisites
+* Ruby 2.4+
